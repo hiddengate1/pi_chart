@@ -2,12 +2,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime
 
-columns = ['datetime','buy_price','sell_price']
-data = pd.read_csv("price.csv", delimiter=',', header=None, names=columns)
-data['datetime'] = [datetime.fromtimestamp(x) for x in data['datetime']]
-x_col  = 'datetime'
-y_cols = ['buy_price', 'sell_price']
+data = pd.read_csv("price.csv", delimiter=',', header=None)
+#only use last 50 columns
+data = data.iloc[-50:]
+data[0] = [datetime.fromtimestamp(x) for x in data[0]]
 
 plt.figure(figsize=(19.2, 10.8))
-plt.plot(data[x_col], data[y_cols])
+plt.plot(data[0], data[[1,2]])
 plt.savefig('graph.png')
