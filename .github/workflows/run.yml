@@ -4,7 +4,7 @@ name: sanpinetwork price update
 # be triggered using cron set at a 10 minutes interval.
 on:
   schedule:
-    - cron: "0 1-23 * * *"
+    - cron: "*/10 * * * *"
 
 # 'jobs' are the routines, we only have
 # one when the instance is built.
