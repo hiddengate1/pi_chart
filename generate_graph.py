@@ -9,4 +9,4 @@ x_col  = 'datetime'
 y_cols = ['buy_price', 'sell_price']
 
 plt.plot(data[x_col], data[y_cols])
-plt.show()
+plt.savefig('graph.png')
