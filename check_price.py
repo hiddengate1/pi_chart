@@ -14,8 +14,7 @@ class SanpinetworkSpider(scrapy.Spider):
     def parse(self, response):
         data = []
         utc_datetime = datetime.utcnow()
-        vn_datetime = utc_datetime.astimezone(pytz.timezone('Asia/Ho_Chi_Minh'))
-        intTime = vn_datetime.timestamp()
+        intTime = utc_datetime.timestamp()
         buyPrice = response.selector.xpath('//*[@id="container"]/section[1]/div[1]/ul/li[1]/strong/text()').get()
         sellPrice = response.selector.xpath('//*[@id="container"]/section[1]/div[1]/ul/li[2]/strong/text()').get()
         data.append(intTime)
