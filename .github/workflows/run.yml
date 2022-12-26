@@ -32,3 +32,6 @@ jobs:
           pip install -r requirements.txt
           python check_price.py
           python generate_graph.py
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'update data'
