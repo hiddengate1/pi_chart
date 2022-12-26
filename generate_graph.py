@@ -8,5 +8,6 @@ data = data.iloc[-50:]
 data[0] = [datetime.fromtimestamp(x) for x in data[0]]
 
 plt.figure(figsize=(19.2, 10.8))
+plt.xticks(rotation=60)
 plt.plot(data[0], data[[1,2]])
 plt.savefig('graph.png')
