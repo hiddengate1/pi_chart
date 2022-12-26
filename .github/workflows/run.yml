@@ -3,6 +3,7 @@ name: sanpinetwork price update
 # 'on' is the trigger, in this case this Action will
 # be triggered using cron set at a 10 minutes interval.
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/10 * * * *"
 
