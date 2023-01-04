@@ -26,6 +26,11 @@ jobs:
         with:
           python-version: "3.8"
           architecture: "x64"
+          
+      #Install chromium
+      - name: Setup chromium
+        run: |
+          sudo apt install -y chromium-browser
 
       # Use PIP to install the dependencies and then run the script.
       - name: Running Script
