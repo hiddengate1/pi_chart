@@ -21,6 +21,7 @@ driver = uc.Chrome(service=chrome_service, options=chrome_options)
 driver.get(url=URL)
 buyPrice = WebDriverWait(driver=driver, timeout=20.0).until(EC.presence_of_element_located((By.XPATH, '//*[@id="container"]/section[1]/div[1]/ul/li[1]/strong'))).text
 sellPrice = WebDriverWait(driver=driver, timeout=20.0).until(EC.presence_of_element_located((By.XPATH, '//*[@id="container"]/section[1]/div[1]/ul/li[2]/strong'))).text
+driver.quit()
 data = []
 utc_datetime = datetime.utcnow()
 intTime = utc_datetime.timestamp()
