@@ -30,13 +30,13 @@ jobs:
       #Install requirements packages
       - name: Setup environment
         run: |
-          sudo apt install -y chromium-browser xvfb
+          sudo apt install -y chromium-browser
 
       # Use PIP to install the dependencies and then run the script.
       - name: Running Script
         run: |
           pip install -r requirements.txt
-          python check_price.py ${{secrets.CHECK_PRICE_PY}}
+          python update_price.py ${{secrets.CHECK_PRICE_PY}}
           python generate_graph.py
       - uses: EndBug/add-and-commit@v9
         with:
