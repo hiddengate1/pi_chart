@@ -1,4 +1,4 @@
-name: sanpinetwork price update docker
+name: sanpinetwork price update
 on:
   workflow_dispatch:
   repository_dispatch:
