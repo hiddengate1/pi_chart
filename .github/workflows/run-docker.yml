@@ -1,0 +1,26 @@
+name: name: sanpinetwork price update docker
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: active-check-price
+#   schedule:
+#     - cron: "*/10 * * * *"
+jobs:
+  container-check-price-job:
+    runs-on: ubuntu-latest
+    container:
+      image: d4rkk3y/python-auto-env:latest
+      env:
+        CHECK_PRICE_PY: ${{ secrets.CHECK_PRICE_PY }}
+      credentials:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run task
+        run: |
+          python update_price.py $CHECK_PRICE_PY
+          python generate_graph.py
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'update data'
