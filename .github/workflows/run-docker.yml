@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: active-check-price
-#   schedule:
-#     - cron: "*/10 * * * *"
+  schedule:
+    - cron: "*/10 * * * *"
 jobs:
-  container-check-price-job:
+  run-check-price-job:
     runs-on: ubuntu-latest
     container:
       image: d4rkk3y/python-auto-env:latest
