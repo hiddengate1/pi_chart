@@ -4,7 +4,7 @@ on:
   repository_dispatch:
     types: active-check-price
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
 jobs:
   run-check-price-job:
     runs-on: ubuntu-latest
